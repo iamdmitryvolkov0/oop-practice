@@ -1,16 +1,10 @@
 <?php
 
 namespace App;
-class Visitor
+class Visitor extends Human
 {
-    public string $name = 'DefaultVisitor';
-    public int $age = 20;
-
-//    public function __construct($name, $age) {}
-
-
     public function info(): void
     {
-        print_r($this->name .' is in Moscow now'. ' He is ' . $this->age . ' years old' . "\n");
+        print_r($this->name . ' is in Moscow now' . ' He is ' . $this->age . ' years old' . "\n");
     }
 }

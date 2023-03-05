@@ -11,5 +11,5 @@ $worker->info();
 $worker2=new WorkerGuy('Oleg', 27);
 $worker2->info();
 
-$guy = new Visitor();
+$guy = new Visitor('Ivan', 30);
 $guy->info();
