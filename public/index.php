@@ -1,15 +1,25 @@
 <?php
 
+use App\Salary;
 use App\Visitor;
-use App\WorkerGuy;
+use App\Worker;
 
 require('../vendor/autoload.php');
 
-$worker = new WorkerGuy('Gregory', 20);
+$worker = new Worker('Gregory', 20);
+$worker->setHours(140);
 $worker->info();
+$salary = Salary::count($worker->getHours(), $worker->getName());
+print_r($salary);
 
-$worker2=new WorkerGuy('Oleg', 27);
+$worker2 = new Worker('Oleg', 27);
+$worker2->setHours(100);
 $worker2->info();
+$worker2->rest();
 
-$guy = new Visitor('Ivan', 30);
-$guy->info();
+$visitor = new Visitor('Ivan', 30);
+$visitor->info();
+$visitor->setHours(0);
+$salary = Salary::count($visitor->getHours(), $visitor->getName());
+print_r($salary);
+
