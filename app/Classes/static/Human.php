@@ -1,12 +1,30 @@
 <?php
 
-namespace App;
+namespace App\Classes\static;
+
+use App\Interfaces\HumanInterface;
 
 abstract class Human implements HumanInterface
 {
     private string $name;
     private int $age;
+    private string $position;
 
+    /**
+     * @return string
+     */
+    public function getPosition(): string
+    {
+        return $this->position;
+    }
+
+    /**
+     * @param string $position
+     */
+    public function setPosition(string $position): void
+    {
+        $this->position = $position;
+    }
     private int $hours;
 
     /**
@@ -61,10 +79,13 @@ abstract class Human implements HumanInterface
     /**
      * @param $name
      * @param $age
+     * @param $position
      */
-    public function __construct($name, $age)
+    public function __construct($name, $age, $position)
     {
         $this->name = $name;
         $this->age = $age;
+        $this->position=$position;
+
     }
 }
